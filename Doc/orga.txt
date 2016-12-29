@@ -1,0 +1,15 @@
+###################### Architecture HL #########################"
+
+# Map des composants systèmes
+[Raspberry Pi] => USB <= [Arduino1] => CAN <= [Arduino2] <= [Clavier/Sonnette]
+
+# Interaction interne dans la maison
+[Raspberry PI] => WIFI/ETH <= [Smartphone]
+
+###################### Architecture Système ####################
+[Raspberry PI]
+
+[]
+
+
+
