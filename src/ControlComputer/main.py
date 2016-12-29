@@ -14,6 +14,10 @@ if __name__ == "__main__" :
    # Load preferences 
    sl = SystemLoader.SystemLoader()
    pwds = sl.loadPwd()
+   if len(pwds) != 0 :
+      status = "OK"
+   else :
+      status = "NOK"
 
    # start Controller
    ct = Controller.Controller(pwds)
