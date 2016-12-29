@@ -1,9 +1,7 @@
 ####################### ControlComputer Readme #####################
 
-#Required Packet :
-# PyCrypto : for AES256
-
-
-
-WIP
-
+# Rules regarding systempref file :
+# Location must be available : /opt/ringbell (default)
+# Comment can be added but shall follow the two below syntaxes:
+#  1. # On a line comment, no space is set BEFORE the # caracter
+#  2. # On an inline comment, no space BEFORE the # caracter

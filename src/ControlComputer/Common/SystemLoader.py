@@ -23,8 +23,12 @@ class SystemLoader :
 
          # read file (line by line)
          for line in fi :
-           li.append(line[:-1]) # remove \n caracter
-           print  ("[DEBUG] - read line [" + line[:-1] + "]")
+           # don't keep comments
+           if line[0] != globals.COMMENT: 
+              # remove inline comments
+              nl = line.split(globals.COMMENT, 1)[0]
+              li.append(nl) # remove \n caracter
+              print  ("[DEBUG] - read line [" + nl + "]")
          fi.close()
          return li
       else :
