@@ -1,11 +1,11 @@
 import os, sys, struct
 
-sys.insert(0, ../Common)
+sys.path.insert(0, os.environ('commonPath'))
 
 import globals
 
 # @class StatusMessageData : implementation of received Status Message
-class StatusMessageData(AbstractData) :
+class StatusMessageData(globals.AbstractData) :
 
    # Internal data declaration
    __ArduinoInternStatus = 0
