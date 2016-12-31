@@ -1,0 +1,28 @@
+# This file describes :
+# - protocol format to be used to chat with intern Arduino
+# - message data content to be used with intern Arduino
+
+# Protocol Description 
+
+              HEADER         |  DATA             | EOM
+         MsgId  | MsgLength  | DataLength | Data | End of Message    
+Bytes : 2 bytes | 2 bytes    | 2          | X    | Byte 0xFF
+
+
+
+# Message Description (describes msgIds and data format)
+
+1 General Status Message : 0x0012
+2b DataLength             : 0x0003
+1b Arduino Intern Status  : [ENUM TYPE] 0x01 OK, 0x00 NOK
+1b Arduino Extern Status  : [ENUM TYPE] 0x01 OK, 0x00 NOK
+1b CAN Bus status         : [ENUM TYPE] 0x01 OK, 0x00 Bus nok [WIP] 
+
+2 New password entry     : 0x0013
+2b DataLength            : [UNSIGNED SIZE]
+Xb * length              : [UNSIGNED PWD TYPES]
+
+3 Open gates request     : 0x0015
+2b DataLength            : 0x0003
+3b Request               : Ascii : REQ
+
